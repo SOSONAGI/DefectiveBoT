@@ -4,12 +4,9 @@
 
 import streamlit as st
 import base64
-from dotenv import load_dotenv, find_dotenv
 
 from openai import OpenAI
 import os
-
-_ = load_dotenv(find_dotenv())
 
 # Function to encode the image to base64
 def encode_image(image_file):
@@ -20,9 +17,6 @@ st.set_page_config(page_title="Scientific Image Analyst", layout="centered", ini
 # Streamlit page setup
 st.title("하자 이미지 분석 전문가 🤖")
 
-
-# Retrieve the OpenAI API Key from secrets
-api_key = os.getenv('OPENAI_API_KEY')
 
 # Initialize the OpenAI client with the API key
 client = OpenAI(api_key=api_key)
