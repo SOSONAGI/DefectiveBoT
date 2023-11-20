@@ -13,11 +13,11 @@ def encode_image(image_file):
     return base64.b64encode(image_file.getvalue()).decode("utf-8")
 
 
-st.set_page_config(page_title="Scientific Image Analyst", layout="centered", initial_sidebar_state="collapsed")
+st.set_page_config(page_title="마감하자 이미지 비전 분석!", layout="centered", initial_sidebar_state="collapsed")
 # Streamlit page setup
 st.title("하자 이미지 분석 전문가 🤖")
 
-
+api_key = st.secrets["OPENAI_API_KEY"]
 # Initialize the OpenAI client with the API key
 client = OpenAI(api_key=api_key)
 
